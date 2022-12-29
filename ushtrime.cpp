@@ -64,21 +64,7 @@ using namespace std;
 
 int main(){
 
-    int n;
-    cout << "Jepe vleren per n: ";
-    cin >> n;//78
-
-    int shuma = 0;
-    for (int i = 2; i <= n; i++)
-    {
-        if (i+1>4)
-        {
-            break;
-        }
-
-        shuma = shuma + 3 * i - 1;
-        cout << "Shuma: " << shuma << endl;//13
-    }
+    int a, b, c;
     
 
     return 0;
