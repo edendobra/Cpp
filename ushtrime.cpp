@@ -206,35 +206,31 @@
 #include <string>
 using namespace std;
 
-int mostWordsFound(vector<string>& sentences) {
-    int length = sentences.size();
-    int words = 0;
-    int max = 0;
-    for (int  i = 0; i < length; i++)
+int numJewelsInStones(string jewels, string stones) {
+    int lengjew = jewels.size();
+    int lengsto = stones.size();
+    int count = 0;
+
+    for (int i = 0; i < lengjew; i++)
     {
-        words = 0;
-        string fjalia = sentences[i];
-        for (int j = 0; j < fjalia.size(); j++)
+        for (int j = 0; j < lengsto; j++)
         {
-            if (fjalia[j] == ' ')
+            if (jewels[i] == stones[j])
             {
-                words++;
+                count++;
             }
+            
         }
-        words += 1;
-        if (max < words)
-        {
-            max = words;
-        } 
         
     }
-    return max;
-        }
+    return count;
+            }
 
 int main(){
-    vector<string> sentences;
-    sentences = {"alice and bob love leetcode", "i think so too", "this is great thanks very much"};
-    int result = mostWordsFound(sentences);
-    cout << "The greatest number of words is: " << result << endl;
+    string jewels = "aA";
+    string stones = "aAAbbbb";
+
+    int result = numJewelsInStones(jewels, stones);
+    cout << "Number of stones that are jewels is: " << result;
     return 0;
 }
