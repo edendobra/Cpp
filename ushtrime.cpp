@@ -231,33 +231,64 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// #include <string>
+// #include <vector>
+
+// using namespace std;
+
+// int prefixCount(vector<string>& words, string pref) {
+//     int count = 0;
+//     for (int i = 0; i < words.size(); i++)
+//     {
+//         string word = words[i];
+//         int length = pref.size();
+//         if (word.substr(0, length) == pref)
+//         {
+//             count++;
+//         }
+        
+//     }
+//     return count;
+//         }
+
+// int main(){
+//     vector<string> words;
+//     words = {"leetcode","win","loops","success"};
+//     string pref = "code";
+
+//     int result = prefixCount(words, pref);
+//     cout << "Count: " << result << endl;
+//     return 0;
+// }
+
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 
 using namespace std;
 
-int prefixCount(vector<string>& words, string pref) {
-    int count = 0;
-    for (int i = 0; i < words.size(); i++)
+void reverseString(vector<char>& s) {
+    int length = s.size();
+    char temp;
+    for (int i = 0, j = (length-1); i < j ; i++, j--)
     {
-        string word = words[i];
-        int length = pref.size();
-        if (word.substr(0, length) == pref)
-        {
-            count++;
-        }
+            swap(s[i], s[j]);
         
     }
-    return count;
-        }
+    cout << "{\"";
+    for (int i = 0; i < length; i++)
+    {
+            string lidhesa = (i == length - 1) ? "\"}" : "\",\"";
+            cout << s[i] << lidhesa;
+    }
+    
+    
+    }
 
 int main(){
-    vector<string> words;
-    words = {"leetcode","win","loops","success"};
-    string pref = "code";
-
-    int result = prefixCount(words, pref);
-    cout << "Count: " << result << endl;
+    vector<char> s;
+    s = {'h', 'e', 'l', 'l', 'o'};
+    reverseString(s);
     return 0;
 }
