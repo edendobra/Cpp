@@ -201,36 +201,63 @@
 //         Biletat(d1, d2, d3, d4, d5, d6, d7);
 //         return 0;
 // }
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// string sortSentence(string s) {
+//     int length = s.size();
+//     string word = "";
+//     string result = "";
+//     for (int i = 0; i < length; i++)
+//     {
+//         for (int j = 0; j < length; j++)
+//         {
+//             if (s[i] == ' ')
+//             {
+//                 break;
+//             } else {
+//                 word += s[i];
+//             }
+            
+//         }
+//         result = result + word.pop_back();
+//         }
+    
+//     }
+
+// int main(){
+//     string s = "is2 sentence4 This1 a3";
+//     return 0;
+// }
+
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
+
 using namespace std;
 
-int numJewelsInStones(string jewels, string stones) {
-    int lengjew = jewels.size();
-    int lengsto = stones.size();
+int prefixCount(vector<string>& words, string pref) {
     int count = 0;
-
-    for (int i = 0; i < lengjew; i++)
+    for (int i = 0; i < words.size(); i++)
     {
-        for (int j = 0; j < lengsto; j++)
+        string word = words[i];
+        int length = pref.size();
+        if (word.substr(0, length) == pref)
         {
-            if (jewels[i] == stones[j])
-            {
-                count++;
-            }
-            
+            count++;
         }
         
     }
     return count;
-            }
+        }
 
 int main(){
-    string jewels = "aA";
-    string stones = "aAAbbbb";
+    vector<string> words;
+    words = {"leetcode","win","loops","success"};
+    string pref = "code";
 
-    int result = numJewelsInStones(jewels, stones);
-    cout << "Number of stones that are jewels is: " << result;
+    int result = prefixCount(words, pref);
+    cout << "Count: " << result << endl;
     return 0;
 }
