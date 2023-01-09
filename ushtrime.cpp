@@ -293,32 +293,104 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// int percentageLetter(string s, char letter) {
+
+//     double count = 0;
+//     double length = s.size();
+//     double result;
+//     for (int i = 0; i < length; i++)
+//     {
+//         if (s[i] == letter)
+//         {
+//             count++;
+//         }
+        
+//     }
+//     result = (count / length);
+//     return result * 100;
+//         }
+
+// int main(){
+//     string s = "foobar";
+//     char letter = 'o';
+
+//     int result = percentageLetter(s, letter);
+//     cout << result;
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <vector>
+// #include <string>
+
+// using namespace std;
+
+// bool digitCount(string num) {
+//     int length = num.size();
+//     int count = 0;
+//     for (int i = 0; i < length; i++)
+//     {
+//         for (int j = 0; j < length; j++)
+//         {
+//             if (num.at(i) == j)
+//             {
+//                 count++;
+//             }
+            
+//         }
+//     }
+//     return count > 0;
+// }
+    
+
+// int main(){
+//     string nums = "1210";
+
+//     bool result = digitCount(nums);
+//     cout << result;
+//     return 0;
+// }
+
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
-int percentageLetter(string s, char letter) {
+int countMatches(vector<vector<string>>& items, string ruleKey, string ruleValue) {
+    int count = 0;
+    int rows = items.size();
+    int columns = items[0].size();
 
-    double count = 0;
-    double length = s.size();
-    double result;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < rows; i++)
     {
-        if (s[i] == letter)
+        for (int j = 0; j < columns; j++)
         {
-            count++;
+            if (ruleKey == "type" && ruleValue == items[i][j] && (i == j || i > j))
+            {
+                count++;
+            } else if (ruleKey == "color" && ruleValue == items[i][j] && (i == j || i!=0) ){
+                count++;
+            } else if (ruleKey == "name" && ruleValue == items[i][j] && j>i){
+                count++;
+            }
+            
         }
         
     }
-    result = (count / length);
-    return result * 100;
+    return count;
         }
 
 int main(){
-    string s = "foobar";
-    char letter = 'o';
 
-    int result = percentageLetter(s, letter);
+    vector<vector<string>> items;
+    string ruleKey = "type";
+    string ruleValue = "phone";
+    items = {{"phone","blue","pixel"},{"computer","silver","phone"},{"phone","gold","iphone"}};
+    int result = countMatches(items, ruleKey, ruleValue);
     cout << result;
     return 0;
 }
