@@ -12,13 +12,16 @@ int countMatches(vector<vector<string>>& items, string ruleKey, string ruleValue
     {
         for (int j = 0; j < columns; j++)
         {
-            if (ruleKey == "type" && ruleValue == items[i][j] && (i == j || i > j))
+            if (ruleKey == "type" && ruleValue == items[i][0])
             {
                 count++;
-            } else if (ruleKey == "color" && ruleValue == items[i][j] && (i == j || i!=0) ){
+                break;
+            } else if (ruleKey == "color" && ruleValue == items[i][1]){
                 count++;
-            } else if (ruleKey == "name" && ruleValue == items[i][j] && j>i){
+                break;
+            } else if (ruleKey == "name" && ruleValue == items[i][2]){
                 count++;
+                break;
             }
             
         }
