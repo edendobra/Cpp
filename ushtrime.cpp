@@ -395,34 +395,212 @@
 //     return 0;
 // }
 
-#include <iostream>
-#include <vector>
-#include <string>
+// #include <iostream>
+// #include <vector>
+// #include <string>
 
-using namespace std;
+// using namespace std;
 
- string interpret(string command) {
-     string eden = "";
-     for (int i = 0; i < command.size(); i++)
-     {
-         char current = command[i];
+//  string interpret(string command) {
+//      string eden = "";
+//      for (int i = 0; i < command.size(); i++)
+//      {
+//          char current = command[i];
 
-         if (current == ')' && command[i-1] == '(')
-         {
-             eden += 'o';
-         } 
-         if (current == '(' || current == ')'){
-             continue;
-         }
-         eden += current;
-          }
+//          if (current == ')' && command[i-1] == '(')
+//          {
+//              eden += 'o';
+//          } 
+//          if (current == '(' || current == ')'){
+//              continue;
+//          }
+//          eden += current;
+//           }
 
-          return eden;
-    }
+//           return eden;
+//     }
 
-int main(){
-          string command = "G()(al)";
-          string result = interpret(command);
-          cout << result;
-          return 0;
-}
+// int main(){
+//           string command = "G()(al)";
+//           string result = interpret(command);
+//           cout << result;
+//           return 0;
+// }
+
+// #include <iostream>
+// #include <vector>
+// #include <string.h>
+// #include <map>
+// using namespace std;
+
+//  string restoreString(string s, vector<int>& indices) {
+//         map<int, string> together;
+//         for (int i=0; i<indices.size();i++){
+//             together[indices[i]] = s.at(i);
+//         }
+
+//         string result = "";
+
+//         for(int i =0;i<indices.size();i++){
+//             result += together[i];
+//         }
+
+//         return result;
+
+        
+//     }
+
+// int main(){
+
+//         vector<int> indices;
+//         string s = "dreni";
+//         indices = {4,3,2,1,0};
+
+//         string result = restoreString(s, indices);
+//         std::cout << result;
+
+//         return 0;
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main(){
+
+//     const int x = 4;
+
+//     int matrica[x][x] = {};
+
+//     int totali = 0;
+//     int k = 0;
+
+//     for (int i = 0; i < x; i++)
+//     {
+//         for (int j = 0; j < x; j++)
+//         {
+//             matrica[i][j] = 15 - k);
+//             k++;
+//         }
+        
+//     }
+
+//     for (int i = 0; i < x; i++)
+//     {
+//         cout << "{";
+//         for (int j = 0; j < x; j++)
+//         {
+//             string lidhesa = (j == x - 1) ? " " : ",";
+//             cout << setw(3) << matrica[i][j] << lidhesa;
+//         }
+//         cout << "}" << endl;
+//         }
+
+
+    
+
+
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+// int mbledhja(int fillimi, int mbarimi){
+//     int shuma = 0;
+//     for (int i = fillimi; i < mbarimi; i++)
+//     {
+//         shuma += i;
+//     }
+//     return shuma;
+// }
+
+// int main(){
+//     int fillo, mbaro;
+
+//     cout << "Fillo nga: ";
+//     cin >> fillo;
+//     cout << "Mbaro tek: ";
+//     cin >> mbaro;
+
+//     int x = mbledhja(fillo, mbaro);
+//     cout << x;
+
+//     return 0;
+// }
+// Detyra e pare -------------
+// #include <iostream>
+// #include <math.h>
+// using namespace std;
+// int main(){
+//     double siper, poshte, result, n;
+//     cout << "Jep vleren per n: ";
+//     cin >> n;
+
+//     siper = 12 * n + 36;
+//     poshte = pow(n, 2) - 12 * n + 32;
+
+//     result = siper / poshte;
+
+//     cout << "Vlera perfundimtare: " << result;
+//     return 0;
+// }
+
+// Detyra e dyte
+// #include <iostream>
+// #include <math.h>
+// using namespace std;
+
+// int main(){
+//     double k, n, p;
+//     k = 2;
+//     cout << "Jep vleren per n: ";
+//     cin >> n;
+//     while(n < k){
+//         cout << "Jep nje vlere valide me te madhe se " << k << ": ";
+//         cin >> n;
+//     }
+//      p = 1;
+//      for (int i = k; i < n; i++)
+//      {
+//          p *= (pow((2 * i - 5)*1.0, n*1.0) / (n - 2)); 
+//     }
+//     cout << "Prodhimi eshte: " << p;
+
+//         return 0;
+
+// Detyra e trete
+
+// #include <iostream>
+// #include <math.h>
+// using namespace std;
+// int main(){
+
+//     double i, n, s,p=1;
+//     i = 2;
+//     cout << "Jep vleren per n: ";
+//     cin >> n;
+
+//     while(n<i){
+//         cout << "Jep vlere valide";
+//         cin >> n;
+//     }
+//     for (int i = 1; i < n; i++)
+//     {
+//         if (i == 1)
+//         {
+//             continue;
+//         }
+        
+//         p *= 1 - i;
+//     }
+    
+
+//     for (i; i < n; i++)
+//     {
+
+//         s += (n / p) + sqrt(i);
+//     }
+
+//     cout << "Shuma eshte: " << s;
+//     return 0;
+// }

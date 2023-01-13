@@ -22,3 +22,4 @@ int main(){
         cout << "Shuma eshte: " << sum << endl;
         return 0;
 }
+//

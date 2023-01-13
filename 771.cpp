@@ -30,3 +30,4 @@ int main(){
     cout << "Number of stones that are jewels is: " << result;
     return 0;
 }
+//
